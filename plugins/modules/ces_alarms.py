@@ -212,7 +212,7 @@ class CesAlarmsModule(OTCModule):
         alarm_action_enabled=dict(required=False, type='bool', default='True'),
         alarm_level=dict(required=False, type='int', default=2),
         alarm_actions=dict(required=False, type='dict'),
-        ok_actions=dict(required=False, type='list', elements='str', default=[]),
+        ok_actions=dict(required=False, type='dict'),
         switch_alarm_state=dict(required=False, type='bool', default='False'),
         state=dict(type='str', choices=['present', 'absent'], default='present')
     )
