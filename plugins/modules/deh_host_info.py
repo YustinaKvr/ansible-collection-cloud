@@ -71,59 +71,128 @@ RETURN = '''
 deh_hosts:
     description: Dictionary of DeH hosts
     returned: changed
-    type: list
-    sample: [
-      {
-          "allocated_at": "2020-09-30T09:38:15Z",
-          "auto_placement": "on",
-          "availability_zone": "az01",
-          "available_memory": 334848,
-          "available_vcpus": 71,
-          "dedicated_host_ids": null,
-          "host_properties": {
-              "available_instance_capacities": [
-                  {
-                      "flavor": "s2.8xlarge.2",
-                      "id": null,
-                      "location": null,
-                      "name": null
-                  },
-                  {
-                      "flavor": "s2.8xlarge.1",
-                      "id": null,
-                      "location": null,
-                      "name": null
-                  }
-              ],
-              "cores": 12,
-              "host_type": "s2-medium",
-              "host_type_name": "s2-medium",
-              "id": null,
-              "location": null,
-              "memory": 335872,
-              "name": null,
-              "sockets": 2,
-              "vcpus": 72
-          },
-          "host_type": null,
-          "id": "9b20bd80-c1aa-438c-a499-f5b5308ac123",
-          "instance_total": 1,
-          "instance_uuids": [
-              "a0c4d7d6-a2ae-4519-92d9-f0780e6f1123"
-          ],
-          "name": "deh-name",
-          "project_id": "16d53a84a13b49529d2e2c3646691123",
-          "quantity": null,
-          "released_at": "",
-          "state": "available",
-          "tags": [
-                {
-                    "mytag": "myvalue",
-                    "yourtag": "yourvalue"
-                }
-          ]
-      }
-    ]
+    type: complex
+    contains:
+        allocated_at:
+          description:
+          type: str
+          sample: "2020-09-30T09:38:15Z"
+        auto_placement:
+          description:
+          type: str
+          sample: "on"
+        availability_zone:
+          description:
+          type: str
+          sample: "az01"
+        available_memory:
+          description:
+          type: str
+          sample: "334848"
+        available_vcpus:
+          description:
+          type: str
+          sample: "71"
+        dedicated_host_ids:
+          description:
+          type: str
+          sample: "null"
+        host_properties:
+          description:
+          type: complex
+          contains:
+            available_instance_capacities
+              description:
+              type: complex
+              contains:
+                flavor:
+                  description:
+                  type: str
+                  sample: "s2.8xlarge.2"
+                id:
+                  description:
+                  type: str
+                  sample: "null"
+                location:
+                  description:
+                  type: str
+                  sample: "null"
+                name:
+                  description:
+                  type: str
+                  sample: "null"
+            cores:
+              description:
+              type: int
+              sample: 12
+            host_type:
+              description:
+              type: str
+              sample: "s2-medium"
+            host_type_name:
+              description:
+              type: str
+              sample: "s2-medium"
+            id:
+              description:
+              type: str
+              sample: "null"
+            location:
+              description:
+              type: str
+              sample: "null"
+            memory:
+              description:
+              type: str
+              sample: "335872"
+            name:
+              description:
+              type: str
+              sample: "null"
+            sockets:
+              description:
+              type: str
+              sample: "2"
+            vpcus:
+              description:
+              type: str
+              sample: "70"
+        host_type:
+          description:
+          type: str
+          sample: "null"
+        id:
+          description:
+          type: str
+          sample: "3129e95d-3b5f-43ab-b7de-541b62c0e77c",
+        instance_total:
+          description:
+          type: int
+          sample: 0
+        instance_uuids:
+          description:
+          type: str
+          sample: "[]"
+        name:
+          description:
+          type: str
+          sample: "test"
+        project_id:
+          description:
+          type: str
+          sample: "5dd3c0b24cdc4d31952c49589182a89d",
+        quantity:
+          description:
+          type: str
+          sample: "null"
+        realised_at:
+          description:
+          type: str
+          sample: ""
+        status:
+          description:
+          type: str
+          sample: "available"
 '''
 
 EXAMPLES = '''
